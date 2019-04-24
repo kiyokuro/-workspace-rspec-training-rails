@@ -1,0 +1,19 @@
+%h1 Users
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Postal code
+      %th Address
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.postal_code
+        %td= user.address
+        %td= link_to 'show', user_path(user)
+
+= link_to 'New User', new_user_path
